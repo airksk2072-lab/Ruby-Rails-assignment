@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ /* ヘッダーのデザイン */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  /* ヘッダー内のリンク（aタグ）のデザイン */
+header a {
+    color: white;              /* 文字を白にする */
+    text-decoration: none;     /* 下線を消す */
+    margin: 0 10px;            /* リンク同士の間に余白を作る */
+    font-weight: bold;         /* 太字にする */
+  }
+  
+  /* マウスを乗せた（ホバー）時の反応 */
+  header a:hover {
+    text-decoration: underline; /* マウスを乗せた時だけ下線を出す */
+    opacity: 0.8;               /* 少し透明にして「押せる感」を出す */
+  }
+  
+  /* リンクの間の「|」の色も調整 */
+  header nav {
+    color: #ccc;               /* 区切り線を薄いグレーにする */
+  }
+
+  /* テーブルのデザイン */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .schedule-table th {
+    background-color: #f8f9fa;
+  }
+  
+  /* 青いボタンのデザイン */
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  /* ボタンを横に並べる箱 */
+.button-group {
+    display: flex;       /* 横並びにする魔法の言葉 */
+    gap: 5px;            /* ボタン同士の間隔 */
+    align-items: center; /* 高さを揃える */
+  }
+  
+  /* ボタンの共通設定 */
+  .btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap; /* 改行させない */
+  }
+  
+  /* 詳細ボタン（青） */
+  .btn-show {
+    background-color: #3498db;
+  }
+  
+  /* 編集ボタン（緑） */
+  .btn-edit {
+    background-color: #2ecc71;
+  }
+  
+  /* 削除ボタン（赤） */
+  .btn-delete {
+    background-color: #e74c3c;
+  }
+  
+  /* マウスを乗せた時に少し暗くする */
+  .btn:hover {
+    filter: brightness(90%);
+  }

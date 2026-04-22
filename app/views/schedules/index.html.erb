@@ -1,0 +1,39 @@
+<h1>予定一覧</h1>
+
+<div class="actions">
+  <%= link_to "➕ 新規追加", new_schedule_path, class: "btn-primary" %>
+</div>
+
+<table class="schedule-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+      <th></th> </tr>
+  </thead>
+  <tbody>
+    <p>本日の日付：<%= Date.current.strftime("%Y/%m/%d") %></p>
+    <p>予定の合計数：<%= @schedules.count %> 件</p>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.id %></td>
+        <td><%= schedule.title %></td>
+        <td><%= schedule.start_date %></td>
+        <td><%= schedule.end_date %></td>
+        <td><%= schedule.is_all_day ? '○' : '' %></td>
+        <td><%= schedule.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td>
+          <div class="button-group">
+            <%= link_to "詳細", schedule_path(schedule), class: "btn btn-show" %>
+            <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-edit" %>
+            <%= button_to "削除", schedule_path(schedule), method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }, class: "btn btn-delete" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
